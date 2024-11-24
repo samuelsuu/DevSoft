@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { handleFormSubmission } from '../api/formHandler';
+import AOS from 'aos'; // Import AOS
+import 'aos/dist/aos.css'; // Import AOS styles
 
 function ContactForm() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false); // Track submission state
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 }); // Initialize AOS when the component is mounted
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -14,9 +20,9 @@ function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await handleFormSubmission(formData); // Assuming this function is asynchronous
-      setIsSubmitted(true); // Set form as submitted
-      setFormData({ name: '', email: '', message: '' }); // Clear the form
+      await handleFormSubmission(formData); // Assume this function is async
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       console.error('Form submission error:', error);
       setIsSubmitted(false);
@@ -26,11 +32,20 @@ function ContactForm() {
   };
 
   return (
-    <section className="bg-gray-50 py-16" id="contact">
+    <section className="bg-gray-50 py-20" id="contact">
       <div className="max-w-3xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Get In Touch</h2>
-        <p className="text-center text-gray-600 mb-6">We'd love to hear from you! Please fill out the form below to contact us.</p>
-        <form className="bg-white p-8 shadow-lg rounded-lg" onSubmit={handleSubmit}>
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8" data-aos="fade-up">
+          Get In Touch
+        </h2>
+        <p className="text-center text-gray-600 mb-6" data-aos="fade-up" data-aos-delay="200">
+          We'd love to hear from you! Please fill out the form below to contact us.
+        </p>
+        <form
+          className="bg-white p-8 shadow-lg rounded-lg"
+          onSubmit={handleSubmit}
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           <div className="mb-6">
             <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">Your Name</label>
             <input
@@ -42,6 +57,8 @@ function ContactForm() {
               value={formData.name}
               onChange={handleChange}
               required
+              data-aos="zoom-in"
+              data-aos-duration="500"
             />
           </div>
           <div className="mb-6">
@@ -55,6 +72,9 @@ function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               required
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="200"
             />
           </div>
           <div className="mb-6">
@@ -67,19 +87,28 @@ function ContactForm() {
               value={formData.message}
               onChange={handleChange}
               required
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="400"
             />
           </div>
           <button
             type="submit"
-            className={`w-full py-3 rounded-md font-semibold text-white transition duration-300 ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-orange-500 hover:bg-orange-600'}`}
+            className={`w-full py-3 rounded-md font-semibold text-white transition duration-300 ${
+              isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-orange-500 hover:bg-orange-600'
+            }`}
             disabled={isSubmitting}
+            data-aos="fade-up"
+            data-aos-delay="600"
+            data-aos-duration="500"
           >
             {isSubmitting ? 'Submitting...' : isSubmitted ? 'Message Sent!' : 'Send Message'}
           </button>
         </form>
-        {/* Optionally, display a success message or animation */}
         {isSubmitted && (
-          <p className="text-center text-green-500 mt-4">Thank you for your message!</p>
+          <p className="text-center text-green-500 mt-4" data-aos="fade-up" data-aos-duration="500">
+            Thank you for your message!
+          </p>
         )}
       </div>
     </section>

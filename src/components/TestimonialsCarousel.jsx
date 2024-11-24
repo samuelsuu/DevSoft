@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import AOS from 'aos'; // Import AOS
+import 'aos/dist/aos.css'; // Import AOS styles
 
 export default class Testimonials extends Component {
-  // Array of testimonial data (defined outside of render method)
+  // Array of testimonial data
   testimonials = [
     {
       name: "Shirley Fultz",
@@ -25,12 +27,21 @@ export default class Testimonials extends Component {
     }
   ];
 
+  // Initialize AOS
+  componentDidMount() {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      easing: 'ease-in-out', // Easing function for smooth animation
+      once: true, // Animation will happen only once
+    });
+  }
+
   render() {
     return (
-      <section className="py-16 bg-gray-100" id="testimonials">
+      <section className="py-20 bg-gray-100" id="testimonials">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-semibold text-gray-800">What Our Clients Say</h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-semibold text-gray-800" data-aos="fade-up">What Our Clients Say</h2>
+          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
             Hear from our clients about how we have helped them achieve their goals with our services.
           </p>
         </div>
@@ -45,11 +56,18 @@ export default class Testimonials extends Component {
           className="max-w-screen-lg mx-auto px-6"
         >
           {this.testimonials.map((testimonial, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
+            <div
+              key={index}
+              className="flex flex-col items-center text-center"
+              data-aos="fade-up" // Animation when the testimonial comes into view
+              data-aos-delay={index * 200} // Stagger animations
+            >
               <img
-                src={testimonial.image} // Dynamically set image source
+                src={testimonial.image}
                 alt={testimonial.name}
-                className="h-44 w-44 rounded-full mb-4 object-contain  border-4 border-gray-200" // Adjust width and height and add border
+                className="h-44 w-44 rounded-full mb-4 object-contain border-4 border-gray-200"
+                data-aos="zoom-in" // Zoom effect for the image
+                data-aos-duration="500"
               />
               <div className="myCarousel">
                 <h3 className="text-2xl font-semibold text-gray-800">{testimonial.name}</h3>

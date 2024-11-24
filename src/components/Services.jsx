@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 
 function Services() {
   const services = [
@@ -8,11 +10,20 @@ function Services() {
     { title: 'Hardware Supplies', icon: '🖥️', description: 'Reliable hardware sourcing for all your technical needs.' },
   ];
 
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      easing: 'ease-in-out', // Easing function for smooth animation
+      once: true, // Animation will happen only once
+    });
+  }, []);
+
   return (
-    <section className="bg-gray-100 py-16" id="services">
+    <section className="bg-gray-100 py-20" id="services">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-semibold text-gray-800">Our Services</h2>
-        <p className="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">
+        <h2 className="text-4xl font-semibold text-gray-800" data-aos="fade-up">Our Services</h2>
+        <p className="text-lg text-gray-600 mt-4 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
           We offer a range of services designed to help your business grow, from custom software development to expert training and consulting.
         </p>
       </div>
@@ -22,6 +33,9 @@ function Services() {
           <div
             key={index}
             className="bg-white rounded-lg shadow-lg p-6 text-center transform transition-transform hover:scale-105 hover:shadow-2xl"
+            data-aos="fade-up"
+            data-aos-delay={index * 200} // Stagger animations for each card
+            data-aos-duration="600" // Duration of the animation
           >
             <div className="text-5xl mb-4 text-orange-500">{service.icon}</div>
             <h3 className="text-2xl font-semibold mb-2 text-gray-800">{service.title}</h3>
