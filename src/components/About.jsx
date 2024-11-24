@@ -13,7 +13,7 @@ function About() {
   }, []);
 
   return (
-    <section className="py-20 bg-gray-100" id="about">
+    <section className="py-20 px-4 bg-gray-100" id="about">
       {/* About Section Header */}
       <div className="text-center mb-12" data-aos="fade-up">
         <h2 className="text-4xl font-semibold text-gray-800">About DevSoft</h2>

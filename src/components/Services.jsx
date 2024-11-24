@@ -20,7 +20,7 @@ function Services() {
   }, []);
 
   return (
-    <section className="bg-gray-100 py-20" id="services">
+    <section className="bg-gray-100 py-20 px-4"  id="services">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-semibold text-gray-800" data-aos="fade-up">Our Services</h2>
         <p className="text-lg text-gray-600 mt-4 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">

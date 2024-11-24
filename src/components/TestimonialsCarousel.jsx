@@ -38,10 +38,10 @@ export default class Testimonials extends Component {
 
   render() {
     return (
-      <section className="py-20 bg-gray-100" id="testimonials">
+      <section className="py-20 bg-gray-100 " id="testimonials">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-semibold text-gray-800" data-aos="fade-up">What Our Clients Say</h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto px-4" data-aos="fade-up" data-aos-delay="200">
             Hear from our clients about how we have helped them achieve their goals with our services.
           </p>
         </div>
