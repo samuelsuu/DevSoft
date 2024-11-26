@@ -9,7 +9,7 @@ function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
-    AOS.init({ duration: 1000 }); // Initialize AOS when the component is mounted
+    AOS.init({ duration: 1000 }); 
   }, []);
 
   const handleChange = (e) => {
@@ -20,7 +20,7 @@ function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await handleFormSubmission(formData); // Assume this function is async
+      await handleFormSubmission(formData); 
       setIsSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {

@@ -14,7 +14,7 @@ function About() {
 
   return (
     <section className="py-20 px-4 bg-gray-100" id="about">
-      {/* About Section Header */}
+     
       <div className="text-center mb-12" data-aos="fade-up">
         <h2 className="text-4xl font-semibold text-gray-800">About DevSoft</h2>
         <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
@@ -22,9 +22,9 @@ function About() {
         </p>
       </div>
 
-      {/* Image and Text Section */}
+      
       <div className="max-w-screen-lg mx-auto px-6 md:flex items-center justify-between">
-        {/* Text Section */}
+        
         <div className="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
           <h3 className="text-3xl font-semibold text-gray-800 mb-4">Who We Are</h3>
           <p className="text-lg text-gray-600 mb-6">
@@ -36,7 +36,7 @@ function About() {
           </p>
         </div>
 
-        {/* Image Section */}
+        
         <div className="md:w-1/2 rounded-lg overflow-hidden shadow-xl" data-aos="fade-left">
           <img
             src="https://cdn.businessday.ng/2019/11/Technology-industry.jpg" // Replace with your actual image URL
@@ -46,7 +46,7 @@ function About() {
         </div>
       </div>
 
-      {/* Mission and Vision Section */}
+     
       <div className="mt-12 text-center" data-aos="fade-up">
         <h3 className="text-3xl font-semibold text-gray-800 mb-4">Our Vision</h3>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">

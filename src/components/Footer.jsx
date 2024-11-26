@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import AOS from 'aos'; // Import AOS
-import 'aos/dist/aos.css'; // Import AOS styles
+import AOS from 'aos'; 
+import 'aos/dist/aos.css'; 
 
 function Footer() {
   useEffect(() => {
-    AOS.init({ duration: 1000 }); // Initialize AOS when the component is mounted
+    AOS.init({ duration: 1000 }); 
   }, []);
 
   return (
@@ -18,7 +18,6 @@ function Footer() {
           </p>
         </div>
 
-        {/* Footer Navigation Links */}
         <ul
           className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 text-center md:text-left"
           data-aos="fade-up"
@@ -50,7 +49,6 @@ function Footer() {
           </li>
         </ul>
 
-        {/* Footer Bottom Text */}
         <div className="text-center mt-6 md:mt-0" data-aos="fade-up" data-aos-delay="400">
           <p className="text-gray-400 text-sm">© 2024 DevSoft, All Rights Reserved.</p>
         </div>

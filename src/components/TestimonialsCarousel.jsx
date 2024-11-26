@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import AOS from 'aos'; // Import AOS
-import 'aos/dist/aos.css'; // Import AOS styles
+import AOS from 'aos'; 
+import 'aos/dist/aos.css'; 
 
 export default class Testimonials extends Component {
-  // Array of testimonial data
+  
   testimonials = [
     {
       name: "Shirley Fultz",
@@ -27,12 +27,12 @@ export default class Testimonials extends Component {
     }
   ];
 
-  // Initialize AOS
+  
   componentDidMount() {
     AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      easing: 'ease-in-out', // Easing function for smooth animation
-      once: true, // Animation will happen only once
+      duration: 1000, 
+      easing: 'ease-in-out', 
+      once: true, 
     });
   }
 
@@ -59,14 +59,14 @@ export default class Testimonials extends Component {
             <div
               key={index}
               className="flex flex-col items-center text-center"
-              data-aos="fade-up" // Animation when the testimonial comes into view
-              data-aos-delay={index * 200} // Stagger animations
+              data-aos="fade-up"
+              data-aos-delay={index * 200} 
             >
               <img
                 src={testimonial.image}
                 alt={testimonial.name}
                 className="h-44 w-44 rounded-full mb-4 object-contain border-4 border-gray-200"
-                data-aos="zoom-in" // Zoom effect for the image
+                data-aos="zoom-in" 
                 data-aos-duration="500"
               />
               <div className="myCarousel">

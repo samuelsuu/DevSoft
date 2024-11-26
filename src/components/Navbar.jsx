@@ -15,7 +15,7 @@ function Navbar() {
           </a>
         </div>
 
-        {/* Desktop Menu */}
+      
         <div className="hidden md:flex space-x-8 items-center">
           <a
             href="#about"
@@ -43,14 +43,14 @@ function Navbar() {
           </a>
         </div>
 
-        {/* Hamburger Icon (Mobile Menu) */}
+       
         <div className="md:hidden flex items-center">
           <button
             onClick={toggleMenu}
             className="text-white focus:outline-none z-50"
           >
             {isOpen ? (
-              // Close Icon
+             
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -86,7 +86,7 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu with Slide-in Effect */}
+      
       <div
         className={`md:hidden fixed top-0 right-0 bg-gray-800 w-3/4 h-full transform transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
@@ -94,7 +94,7 @@ function Navbar() {
           <a
             href="#about"
             className="block text-white text-lg text-center py-2 px-4 rounded hover:bg-gray-700 transition duration-300 ease-in-out"
-            onClick={toggleMenu} // Close menu on link click
+            onClick={toggleMenu} 
           >
             About Us
           </a>

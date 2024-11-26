@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS styles
+import 'aos/dist/aos.css'; 
 
 function Services() {
   const services = [
@@ -13,9 +13,9 @@ function Services() {
   // Initialize AOS
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      easing: 'ease-in-out', // Easing function for smooth animation
-      once: true, // Animation will happen only once
+      duration: 1000, 
+      easing: 'ease-in-out', 
+      once: true, 
     });
   }, []);
 
